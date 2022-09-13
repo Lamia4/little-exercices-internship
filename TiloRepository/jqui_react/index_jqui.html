@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Beispiel JqueryUI Migration zu React</title>
+    <link type="text/css" href="js_jqui/jqUI/jquery-ui.min.css" rel="stylesheet" media="screen" />
+    <!-- intentionally blank -->
+    <script type="text/javascript" src="js_jqui/jq/jquery.js" defer="defer"></script>
+    <script type="text/javascript" src="js_jqui/jqUI/jquery-ui.min.js" defer="defer"></script>
+    <script type="text/javascript" src="js_jqui/HMI.js" defer="defer"></script>
+    <script type="text/javascript" src="js_jqui/jqUI_Bindings.js" defer="defer"></script>
+    <script type="text/javascript" src="js_jqui/init.js" defer="defer"></script>
+</head>
+  <body>
+    <button id="myButtonToToggle">Ich toggle was</button>
+    <button id="myButtonJustCrying">Ich schreie nur</button>
+    <button id="myButtonJustAlerting">Ich öffne Alarm</button>
+    <button id="myButtonOpenModal">Ich öffne modales Fenster</button>
+    <div id="myAlertDialog" title="Error">Da ist was schief gelaufen!</div>
+    <div id="myModalDialog" title="Working...">
+      <h1>Ein modales Fenster</h1>
+      <div id="myProgressbar"></div>
+      <div id="myButtonIncBar">++</div>
+      <div id="myButtonDecBar">--</div>
+    </div>
+    <div id="myAccodion">
+      <h3>Header Section 1</h3>
+      <div>Content Section 1</div>
+      <h3>Header Section 2</h3>
+      <div>Content Section 2</div>
+      <h3>Header Section 3</h3>
+      <div id="genericControls">Content Section 3</div>
+    </div>
+  </body>
+</html>

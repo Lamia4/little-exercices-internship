@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="../js/jqUI_src/jquery-ui.min.css" rel="stylesheet" media="screen" />
+    <script type="text/javascript" src="../js/jq_src/jquery.js" defer="defer"></script>
+    <script type="text/javascript" src="../js/jqUI_src/jquery-ui.min.js" defer="defer"></script>
+    <script type="text/javascript" src="../js/app.js" defer="defer"></script>
+    <title>Document</title>
+</head>
+<body style="background: rosybrown; font-size: 20px; margin-left: 200px; margin-right: 200px">
+    <span>Hallo Tilo! Eine kleine Notiz und Anmerkung vorweg: Ich habe alles mit meinen Worten formuliert, also nirgendwo abgeschrieben. Ich habe natürlich erst gegoogelt, reingelesen, um es zu verstehen, und dann das Gelesene in eigenen Worten formuliert. Manche Wörter habe ich auf Englisch geschrieben, weil ich es gern habe, sie nur auf Englisch zu verwenden. Das Beispiel habe ich auch selbst ausgedacht- war das, was mir als erstes einfiel.</span>
+    <h1>Objektorientierte Programmierung</h1>
+    <p>OoP ist ein Programmierparadigma (Programmierstil) basierend auf  das Konzept von Objekten.</p>
+    <br>
+    <h2>Was ist in objektorientierter Programmierung eine Methode?</h2>
+    <p>Ein Objekt ist eine Art Container. Dessen Inhalt, seine Eigenschaften werden durch properties beschrieben. Properties enthalten values/Werte und keys/Schlüsselnamen, zu denen die values zugeordnet werden. Ein Objekt kann auch Methoden enthalten. Eine Methode ist dazu da, um zu definieren, was für eine Aktion ausgelöst werden soll. Es definiert die Aktion in Form einer function, die dann aufgerufen wird.</p>
+    <h2>Was ist OoP eine Eigenschaft/Attribut/Property? Was hat das mit Klassen zu tun? Was ist überhaupt eine Klasse?</h2>
+    <p>In OoP sind Klassen(classes) eine Art templates für Javascript objects, sozusagen so etwas wie eine Vorlage und geben vor, wie das object, um das es geht, allgemein aussehen soll, das heißt, welche Eigenschaften, auch Property oder Attribut genannt, es besitzen soll. Properties sind wichtig, weil dadurch ein object individueller gemacht wird. Zum Beispiel ein Hund ist ein Tier/animal, animal wäre die class. Diese class beschreibt, dass alle Objekte, die von dieser Klasse gebildet werden, vier Beine haben soll. Das heißt, das Object hat als Property vier Beine -> {legs: 4} </p>
+    <h2>Was ist eine Object-Instanz?</h2>
+    <p>Ein object ist eine Instanz von einer class. Im obigen Beispiel ist animal die class und dog(Hund) ist eine Instanz davon. </p>
+    <h2></h2>
+    <p>Ein constructor ist eine Methode in einer class und definiert die properties, die jede instanz, die aus dem object aus dieser class entsteht haben soll. Im obigen Beispiel würde es heißen, dass jede Instanz der class "Animal" Beine haben soll. Die genaue Anzahl wird noch nicht festgelegt. (Es wäre zwar möglich, sie schon in der class festzulegen, aber das ist nicht sinnvoll.) Erst wenn die Instanz mit einer neuen Variablen erstellt wird, werden die genauen Werte mit übergeben und in dieser Instanz gespeichert, indem die class aufgerufen wird. Man erstellt dann zum Beispiel zu der class animal eine Instanz mit dem Namen dog in dieser Form: const dog = new Animal ("4"). Das object dog hat dann als property legs:4. Die Verwendung von "new" ist dabei notwendig, wenn die Instanz von der class gebildet werden soll. Beispiel als code folgt weiter unten.</p>
+    <h2>Was ist der Unterschied zwischen class und object Methoden?</h2>
+    <p>Diese Frage habe ich noch nicht beantwortet, weil ich gerne wissen wollte, ob du damit den Unterschied zwischen class und zwischen instanz methoden wissen wolltest oder allgemein?</p>
+    <script>
+        class Animal {
+            constructor(name, legs, hobby){
+                this.name = name;
+                this.legs = legs;
+                this.hobby = hobby
+            };
+            getAction(){
+                return (`${this.name} has ${this.legs} and like ${this.hobby}`)
+            }
+        };
+
+        const dog = new Animal ("Caniko", 4, "running"); //object dog ist eine Instanz und sieht so aus {name: "Caniko", legs: 4, hobby: "running"}
+        const bird = new Animal ("Totischa", 2, "flying"); //object bird ist eine Instanz und sieht so aus {name: "Totischa", legs: 2, hobby: "flying"};
+        console.log(dog);
+        console.log(dog.getAction());
+        console.log(bird);
+    </script>
+    <h1>Neuer Input von Tilo</h1>
+    <ul>
+        <li>Das passt soweit, lass uns nochwas versuchen...</li>
+        <li>ich habe im Header das Framework JQuery eingebunden <b>Datei in jq_src</b></li>
+        <li>Der kern von JQ ist dass anstelle der komplizierten document.getElementby... 
+            Syntax für Selects von DOM Nodes eine verkürzte Syntax eingeführt wird und das 
+            zurückgelieferte Object viele nützliche Methoden mitbringt die einfacher Handzuhaben 
+            sind als natives JS (auch als Vanilla bezeichnet, !!Vanilla ist also kein Framework!!)</li>
+        <ul>
+            <li>z.B.fügt $('#id1').append('&lt;Button&gt;perJQ eingefügt&lt;/Button&gt;') einen nativen HTML5 Button in das Node mit der ID "app" ein</li>
+            <li id="id1"></li>
+            <li>app scripte brauchen einene definierten startpunkt, dazu nutzt man das native onload Event 
+                (kennst du eigentlich auch schon aus dem app frame den react verwendet. 
+                in JQ ist das abgekürzt durch die wrapper funktion $( document ).ready(function() {...}); 
+                die alles andere anrollt <b>(Datei in js)</b>
+            </li>
+            <li>weiterhin habe ich noch JQ UI (ein script + das css theme dazu)eingebunden, 
+                dieses erweitert JQ um vorgefertigte Steuerelemente, welche bereits gestyled sind 
+                und ganz simpel dynmisch eingehangen werden können
+            </li>
+            <li id="id2"></li>
+            <li>Auch habe ich mal eine Klasse ButtonGenerator gebaut, erkennst du das Klassen- und das Instanzattribut?</li>
+            <li id="id3"></li>
+            <li>und erkennst du die wiederverwertbarkeit einer Klasse für reale Probleme</li>
+            <li id="id4"></li>
+        </ul>
+        <li>Versuch doch bitte mal die Klasse zu erweitern und auch das label dynamisch 
+            als konstrukturparameter neben der id zu übergeben
+        </li>
+        <li>wen du das hinbekommen hast, sollte es dir leicht fallen
+             mit der erweiterten klasse für alle Elemente von dataLabels 
+             dynamisch einen button zu erzeugen, in "id5"
+        </li>
+        <li id="id5">
+
+        </li>
+    </ul>
+
+</body>
+</html>
